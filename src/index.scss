@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    /* background: #f1f1f1; */
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 25px 1fr 1fr 100px;
+
+    /* border: 1px solid black; */
+
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container div {
+    padding: 10px;
+    /* border: 1px solid black; */
+}
+
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+
+.left_side {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+svg {
+    max-width: 85%;
+    max-height: 85%;
+    display: none;
+}
+
+
+
+.design {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.palette {
+    grid-row-start: 4;
+    /* grid-row-end: ; */
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    vertical-align: text-top;
+    border: 1px solid black;
+}
+
+.pickedColors {
+    max-width: 90%;
+    max-height: 90%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.prevColor {
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+}
+
+path {
+    cursor: pointer;
+}

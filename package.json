@@ -1,5 +1,5 @@
 {
-  "name": "younique_designs",
+  "name": "Younique_Designs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,17 +8,9 @@
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tarao1185/YOU-NIQUE-DESIGNS.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tarao1185/YOU-NIQUE-DESIGNS/issues"
-  },
-  "homepage": "https://github.com/tarao1185/YOU-NIQUE-DESIGNS#readme",
   "dependencies": {
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
@@ -29,10 +21,12 @@
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "webpack": "^5.73.0"
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  }
 }
