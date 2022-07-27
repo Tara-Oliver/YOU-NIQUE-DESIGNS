@@ -8,7 +8,6 @@ body {
 
 .title {
     text-align: center;
-    /* color: white; */
 }
 
 
@@ -16,7 +15,7 @@ body {
 .logo {
     max-width: 200%;
     max-height: 200%;
-    text-align: left;
+    float: left;
     margin: 2px;
     position: relative;
     top: -50%;
@@ -44,14 +43,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 40px 1fr 1fr 100px;
     overflow: auto;
-    /* border: 1px solid black; */
 }
 
-/* .banner{
-    max-width: 40%;
-    max-height: 40%;
-
-} */
 
 .container div {
     padding: 10px;
@@ -163,31 +156,7 @@ path {
 
 
 
-
-
-/* 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    font-family: 'Fira Sans', sans-serif;
-}
-
-.grid {
-    display: grid;
-    padding: 16px;
-    grid-gap: 16px;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.col {
-    background-color: pink;
-    margin-bottom: 16px;
-    padding: 16px;
-} */
-
-/* img{
+img{
     display: block;
     max-width: 100%;
     max-height: 100%;
@@ -198,19 +167,6 @@ path {
    margin-bottom: 10px;
 }
 
-.design img{
-    display: none;
-    max-width: 100%;
-    max-height: 100%;
-    text-align: center;
-} */
-
-/* .right_side img {
-    display: none;
-    max-width: 100%;
-    max-height: 100%;
-    text-align: center;
-} */
 
 .btn {
     background-color: rgb(0, 0, 0);
@@ -233,7 +189,6 @@ path {
 }
 
 .btn1 {
-    /* text-align: right;  */
     float: right;
     background-color: rgb(0, 0, 0);
     border: none;
@@ -244,11 +199,6 @@ path {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 16px;
-    position: absolute;
-
-    /* top: -50%;
-                -ms-transform: translateY(0%);
-                transform: translateY(0%); */
 }
 
 .btn1:hover {
