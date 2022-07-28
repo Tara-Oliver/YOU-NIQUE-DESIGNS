@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //add header to top of page
     const header = document.createElement('div');
-        header.setAttribute("class", "header");
+    header.setAttribute("class", "header");
+        header.style.backgroundImage = "url('assets/images/headerstripes.jpg')";
         container.appendChild(header);
+
 
     const title = document.createElement('h3');
         title.innerText = 'You-nique Designs';
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         linkedin_link.setAttribute('href', 'https://www.linkedin.com/in/tara-oliver'); // set link path
         linkedin_link.append(linkedin_logo);
 
-    header.append(gitlink, linkedin_link);
+    // header.append(gitlink, linkedin_link);
 
 
 
