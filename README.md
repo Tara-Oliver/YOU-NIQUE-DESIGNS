@@ -1,36 +1,61 @@
 # YOU-NIQUE-DESIGNS
 
-##Background
+**Background**
 
-Your creation starts here. Make something no one has ever seen before by creating your own iconic footwear design with You-nique Designs. You get to make all the necessary design decisions including style, color, and print. See your idea come to life with every click.
+You-nique Designs gives is classic interactive coloring demo. Inspired by my love fashion, I wanted to users a small taste of life as a footwear designer.
 
+**Functionality & MVPs**
+In You-nique Designs, users are able to:
+*Choose a sketch to modify
+*Create a custom color palette
+*Click on previous selected colors to use again
+*Click on each component of the sketch to add/edit colors as they choose
+*Undo any/all changes made to the sketch
+*Read about how to use the
 
-##Functionality & MVPs
-In You-nique Designs, users will be able to:
-* Choose between several styles - including sneaker, pumps, sandal or boot
-* Select colors and prints from pre-designed palette
-* Click on each component of the shoe to highlight and select to add design
-* Drag and drop colors onto the component to fill with selected color or print
-* Select different designs for the left and right shoe
-* Click Done button to render final view of entire shoe-including inside, outside and top views
+**Live Link**
+https://tarao1185.github.io/YOU-NIQUE-DESIGNS/
 
-##Wireframe
-![](assets/images/Homepage.png)
+**Technologies, Libraries, APIs**
+*Webpack and Babel to bundle and transpile the source JavaScript code
+*npm to manage project dependencies
 
+**Implementation Timeline**
+*Friday Afternoon & Weekend: Set up project, including getting webpack up and running. Create a working, responsive grid layout
 
-##Technologies, Libraries, APIs
-* Canvas
+*Monday: Build out basic HTML structure using vanilla JS. Find all assets needed-including SVGs for the fashion sketches. Finish all functionality for color palette.
 
-##Implementation Timeline
+*Tuesday: Edit the SVGs in Adobe Illustrator to make sure all paths are defined and can accept color. Finish all functionality for rendering the correct sketch from left sidebar to the design area and adding colors to sketches.
 
+*Wednesday: Add modal for instructions and professional links to the page. Style entire page.
 
-Friday Afternoon & Weekend: Set up project, including getting webpack up and running. Get familiar with Canvas
+*Thursday Morning: Deploy to GitHub pages.
 
-Monday: Build out basic HTML structure. Find all assets needed - including colors and prints for palette and clean sketches to be used.
+**Bonus Features**
+*After user is done with a sketch:
+  *Render a video visual of all changes made to sketch
+  *Give user the ability to save a finished sketch to their local machine
 
-Tuesday: Work on drag and drop functionality for color palette and make sure selected colors are rendering on the sketches correctly.
+**Code Snippet**
+*This function gives user the ability to change the color of the selected path and created an array where all changes are stored so they can be undone later if neccesary.
 
-Wednesday: Finish styling page. Add bonus features if there is time.
+```
+    const paths = document.querySelectorAll('path');
+    let changes = [];
+    let orgColor = '#ffffff';
 
-Thursday Morning: Deploy to GitHub pages.
+    paths.forEach(path => {
+        path.onclick = function (event) {
+            orgColor = event.target.style.fill;
 
+            const action = {
+                element: event.target,
+                previousColor: orgColor
+            };
+
+            console.log(changes);
+            event.target.style.fill = currentColor;
+            changes.push(action);
+        };
+    });
+  ```
