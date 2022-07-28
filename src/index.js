@@ -75,15 +75,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //add design area to page
     const design_area = document.createElement("div");
-        design_area.innerText = 'Design away!';
         design_area.setAttribute("class", "design");
-        container.appendChild(design_area);
+    
+    const design_title = document.createElement("div"); 
+        design_title.innerText = 'Design away!';
+        design_title.setAttribute = ("id", "design_title");
+    design_area.appendChild(design_title);
+    container.appendChild(design_area);
 
     const oopsBtn = document.createElement("button");
         oopsBtn.innerText = 'Oops!';
         oopsBtn.setAttribute("id", "oopsBtn");
-        oopsBtn.setAttribute("class", "btn");
-        design_area.appendChild(oopsBtn);
+        oopsBtn.setAttribute("class", "btn2");
+        design_title.appendChild(oopsBtn);
 
     // const oops = document.getElementById("oopsBtn");
 

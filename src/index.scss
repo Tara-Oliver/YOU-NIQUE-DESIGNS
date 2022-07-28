@@ -125,7 +125,14 @@ svg {
     grid-row-end: 4;
     grid-column-start: 2;
     grid-column-end: 4;
-    border: 4px inset #EB69EC
+    border: 4px inset #EB69EC;
+    text-align: center;
+        
+
+}
+
+.design_title {
+    margin-bottom: 10px;
 }
 
 .palette {
@@ -188,7 +195,7 @@ img{
     border: 2px solid #F3933B;
 }
 
-.btn1 {
+.btn1, .btn2{
     float: right;
     background-color: rgb(0, 0, 0);
     border: none;
@@ -218,8 +225,8 @@ img{
 
  //Modal Content */
 .modal_content {
-    background-color: #000;
-        opacity: .9;
+    background-color: rgb(0, 0, 0);
+        opacity: .7;
     // opacity: 0.5;
     margin: auto;
     padding: 20px;
