@@ -15,9 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
         container.appendChild(header);
 
 
-    const title = document.createElement('h3');
-        title.innerText = 'You-nique Designs';
+    const title = document.createElement('img');
+        // title.innerText = 'You-nique Designs';
         title.setAttribute("class", "title");
+    title.src = 'assets/images/text-1659028942969.png';
         header.appendChild(title);
 
 
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         linkedin_link.setAttribute('href', 'https://www.linkedin.com/in/tara-oliver'); // set link path
         linkedin_link.append(linkedin_logo);
 
-    // header.append(gitlink, linkedin_link);
+    header.append(gitlink, linkedin_link);
 
 
 
@@ -88,10 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const oopsBtn = document.createElement("button");
         oopsBtn.innerText = 'Oops!';
         oopsBtn.setAttribute("id", "oopsBtn");
-        oopsBtn.setAttribute("class", "btn2");
+        oopsBtn.setAttribute("class", "oopsbtn");
         design_title.appendChild(oopsBtn);
 
-    // const oops = document.getElementById("oopsBtn");
+ 
 
     oopsBtn.onclick = function () {
         history[history.length - 1].element.style.fill = history[history.length - 1].previousColor;
@@ -181,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
  //ADD MODAL TO PAGE
 
     const howToPlayBtn = document.createElement('button');
-        howToPlayBtn.setAttribute("class", "btn1");
+        howToPlayBtn.setAttribute("class", "playbtn");
         howToPlayBtn.innerText = 'How to Play';
         header.appendChild(howToPlayBtn);
 
@@ -221,16 +222,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }; 
 
-
-
-
-
-
-
-
-
-
-
-  
 
 });
