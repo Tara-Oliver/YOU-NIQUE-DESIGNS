@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
  
 
     oopsBtn.onclick = function () {
-        history[history.length - 1].element.style.fill = history[history.length - 1].previousColor;
-        history.pop();
+        changes[changes.length - 1].element.style.fill = changes[changes.length - 1].previousColor;
+        changes.pop();
     };
 
 
@@ -149,10 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         previousColor.setAttribute("class", "prevColor");
         previousColor.style.backgroundColor = currentColor;
-        for (let i = 0; i < 16; i++) {
-            
+        for (let i = 0; i < 16; i++) {   
             pickedColors.appendChild(previousColor);
-            
         }
     };
 
@@ -185,7 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
         howToPlayBtn.setAttribute("class", "playbtn");
         howToPlayBtn.innerText = 'How to Play';
         header.appendChild(howToPlayBtn);
-
 
 
     const modal = document.createElement("div");
