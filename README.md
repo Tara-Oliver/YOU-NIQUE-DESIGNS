@@ -4,14 +4,14 @@
 
 You-nique Designs gives is classic interactive coloring demo. Inspired by my love fashion, I wanted to users a small taste of life as a footwear designer.
 
-**Functionality & MVPs**
-In You-nique Designs, users are able to:
-*Choose a sketch to modify
-*Create a custom color palette
-*Click on previous selected colors to use again
-*Click on each component of the sketch to add/edit colors as they choose
-*Undo any/all changes made to the sketch
-*Read about how to use the
+**Functionality & MVPs**  
+In You-nique Designs, users are able to:  
+*Choose a sketch to modify  
+*Create a custom color palette    
+*Click on previous selected colors to use again  
+*Click on each component of the sketch to add/edit colors as they choose  
+*Undo any/all changes made to the sketch  
+*Read about how to use the demo by clicking 'How to Play'  
 
 **Live Link**
 https://tarao1185.github.io/YOU-NIQUE-DESIGNS/
