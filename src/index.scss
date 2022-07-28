@@ -1,16 +1,14 @@
 @import './styles/reset';
 
-
 body {
     margin: 0;
-
+    padding: 0;
+    height: 100%;
 }
 
 .title {
     text-align: center;
 }
-
-
 
 .logo {
     max-width: 200%;
@@ -28,10 +26,10 @@ body {
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-
-    padding: 20px;
+    
+    padding: 25px;
+    min-height: 100%;
+    position: relative;
 
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
@@ -41,7 +39,7 @@ body {
     grid-gap: 40px;
 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px 1fr 1fr 100px;
+    grid-template-rows: 40px 1fr 1fr 1fr;
     overflow: auto;
 }
 
@@ -66,7 +64,6 @@ body {
     border: 4px inset #5AC4A9;
     overflow: auto;
     text-align: center;
-
 }
 
 // .instruct {
@@ -237,7 +234,7 @@ img{
 
 /* The Close Button */
 .close {
-    color: #83E2c9;
+    color: #5AC4A9;
         float: right;
         font-size: 20px;
         font-weight: bold;
@@ -245,7 +242,7 @@ img{
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #EB69EC;
     text-decoration: none;
     cursor: pointer;
 }
