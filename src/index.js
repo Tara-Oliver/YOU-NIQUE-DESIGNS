@@ -186,9 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
         howToPlayBtn.innerText = 'How to Play';
         header.appendChild(howToPlayBtn);
 
-    // const instructions = document.createElement('div');
-    //     instructions.setAttribute("class", "instruct");
-    //     container.appendChild(instructions);
+
 
     const modal = document.createElement("div");
         modal.setAttribute("class", "modal");
