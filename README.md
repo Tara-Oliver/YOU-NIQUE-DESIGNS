@@ -53,7 +53,7 @@ https://tarao1185.github.io/YOU-NIQUE-DESIGNS/
                 previousColor: orgColor
             };
 
-            console.log(changes);
+ 
             event.target.style.fill = currentColor;
             changes.push(action);
         };
