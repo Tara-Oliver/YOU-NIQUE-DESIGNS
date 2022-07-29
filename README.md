@@ -13,7 +13,7 @@ In You-nique Designs, users are able to:
 *Undo any/all changes made to the sketch  
 *Read about how to use the demo by clicking 'How to Play'  
 
-**Live Link**
+**Live Link:**  
 https://tarao1185.github.io/YOU-NIQUE-DESIGNS/
 
 **Technologies, Libraries, APIs**  
