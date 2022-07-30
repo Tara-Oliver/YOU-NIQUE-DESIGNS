@@ -7,7 +7,7 @@ body {
 }
 
 .title {
-    justify-content: center;
+   justify-content: center;
    margin:auto;
    display: flex;
    padding: 10px;
@@ -27,8 +27,7 @@ body {
     cursor: pointer;
 }
 
-.container {
-    
+.container { 
     padding: 25px;
     min-height: 100%;
     position: relative;
@@ -41,7 +40,7 @@ body {
     grid-gap: 40px;
 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 200px 1fr 1fr 1fr;
+    grid-template-rows: 200px 400px 200px 300px;
     overflow: auto;
 }
 
@@ -72,6 +71,13 @@ svg {
     max-width: 85%;
     max-height: 85%;
     display: none;
+    text-align: center;
+    margin-left:50px ;
+
+-ms-transform: translateY(30%);
+    transform: translateY(5%);
+    // transform: translateX(-10%);
+
 }
 
 ::-webkit-scrollbar {
@@ -115,9 +121,11 @@ svg {
     grid-column-start: 2;
     grid-column-end: 4;
     border: 4px inset #EB69EC;
-    text-align: center;
-        
-
+    // overflow: auto;
+    justify-content: center;
+    display: inline-block;
+        // margin-top: 40%;
+        // width: 100%;
 }
 
 .design_title {
@@ -126,7 +134,6 @@ svg {
 
 .palette {
     grid-row-start: 4;
-    /* grid-row-end: ; */
     grid-column-start: 1;
     grid-column-end: span 3;
     vertical-align: text-top;
@@ -229,8 +236,7 @@ path {
 
 .modal_content {
     background-color: rgb(0, 0, 0);
-        opacity: 0.8;
-    // opacity: 0.5;
+    opacity: 0.8;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -241,9 +247,9 @@ path {
 
 .close {
     color: #5AC4A9;
-        float: right;
-        font-size: 20px;
-        font-weight: bold;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .close:hover,

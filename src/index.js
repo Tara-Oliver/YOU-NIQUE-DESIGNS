@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pumpBtn.setAttribute("class", "btn");
         pumpBtn.innerText = 'Design Pump!';
 
+
         
     const flatImg = document.createElement('img');
         flatImg.src = 'assets/images/clean_flatform.svg';
@@ -70,8 +71,19 @@ document.addEventListener("DOMContentLoaded", function () {
         flatBtn.setAttribute("id", "flatBtn");
         flatBtn.setAttribute("class", "btn");
         flatBtn.innerText = 'Design Sandal!';
+
         
-    img_container.append(pumpImg, pumpBtn, flatImg, flatBtn);
+    const sneakerImg = document.createElement('img');
+    sneakerImg.src = 'assets/images/sneaker.svg';
+
+    const snkrBtn = document.createElement('button');
+    snkrBtn.setAttribute("id", "snkrBtn");
+    snkrBtn.setAttribute("class", "btn");
+    snkrBtn.innerText = 'Design Sneaker!';
+
+
+
+    img_container.append(pumpImg, pumpBtn, flatImg, flatBtn, sneakerImg, snkrBtn);
     left_sidebar.append(img_container);
 
  //DESIGN AREA SECTION//
@@ -83,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const design_title = document.createElement("div"); 
         design_title.innerText = 'Design away!';
         design_title.setAttribute = ("id", "design_title");
+    
     design_area.appendChild(design_title);
     container.appendChild(design_area);
 
@@ -92,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
         oopsBtn.setAttribute("class", "oopsbtn");
         design_title.appendChild(oopsBtn);
 
- 
 
     oopsBtn.onclick = function () {
         changes[changes.length - 1].element.style.fill = changes[changes.length - 1].previousColor;
@@ -102,22 +114,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const largePump = document.querySelector('#Layer_1');
     const largeFlat = document.querySelector('#Layer_2');
+    const largeSnkr = document.querySelector('#Layer_3');
 
-    design_area.append(largePump, largeFlat);
+
+    design_area.append(largePump, largeSnkr, largeFlat);
 
     document.getElementById("pumpBtn").addEventListener("click", displayImage);
     document.getElementById("flatBtn").addEventListener("click", displayImage);
+    document.getElementById("snkrBtn").addEventListener("click", displayImage);
+
 
     function displayImage(ev) {
         if (ev.currentTarget.id == "pumpBtn") {
             document.querySelector('#Layer_2').style.display = "none";
+            document.querySelector('#Layer_3').style.display = "none";
             document.querySelector('#Layer_1').style.display = "inline-block";
-        } else {
+        } else if (ev.currentTarget.id == "flatBtn") {
             document.querySelector('#Layer_2').style.display = "inline-block";
             document.querySelector('#Layer_1').style.display = "none";
+            document.querySelector('#Layer_3').style.display = "none";
+        } else {
+            document.querySelector('#Layer_2').style.display = "none";
+            document.querySelector('#Layer_1').style.display = "none";
+            document.querySelector('#Layer_3').style.display = "inline-block";
         }
     }
-
 
 
  //PALETTE SECTION//
@@ -132,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const colorPicker = document.createElement('input');
         colorPicker.setAttribute("type", "color");
         colorPicker.setAttribute("class", "colorPicker");
-        colorPicker.setAttribute("value", "#000000");
+        colorPicker.setAttribute("value", "#ffffff");
 
         palette.append(colorPicker);
 
@@ -192,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal_content.setAttribute("class", "modal_content");
     
     const instruct_txt = document.createElement('p');
-    instruct_txt.innerHTML = "Show off your design skills by making a one of kind creation!<br><br>Select a style on the left sidebar<br><br>Pick out a color in the bottom section-it will automatically be added to your color palette.<br><br>Click on any part of the sketch to add color to that part of the shoe<br><br>If you make a mistake click the Oops button to undo your recent changes<br><br>If you want to re-use a previous color from your palette just click on the color swatch provided<br><br> ENJOY!";
+    instruct_txt.innerHTML = "Show off your design skills by making a one of a kind creation!<br><br>Select a style from the left sidebar.<br><br>Pick out a color in the bottom section-it will automatically be added to your color palette.<br><br>Click on any part of the sketch to add color to that part of the shoe.<br><br>If you make a mistake, click the Oops button to undo your recent changes.<br><br>If you want to re-use a previous color from your palette, just click on the color swatch provided.<br><br> ENJOY!";
 
     const closebtn = document.createElement('span');
         closebtn.innerText = 'CLOSE X';
@@ -206,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "block";
     };
 
-    // When the user clicks on <span> (x), close the modal
+    
     closebtn.onclick = function () {
         modal.style.display = "none";
     };
