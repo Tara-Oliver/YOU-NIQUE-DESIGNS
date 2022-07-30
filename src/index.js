@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal_content.setAttribute("class", "modal_content");
     
     const instruct_txt = document.createElement('p');
-    instruct_txt.innerHTML = "Show off your design skills by making a one of a kind creation!<br><br>Select a style from the left sidebar.<br><br>Pick out a color in the bottom section-it will automatically be added to your color palette.<br><br>Click on any part of the sketch to add color to that part of the shoe.<br><br>If you make a mistake, click the Oops button to undo your recent changes.<br><br>If you want to re-use a previous color from your palette, just click on the color swatch provided.<br><br> ENJOY!";
+    instruct_txt.innerHTML = "Show off your design skills by making a one of a kind creation!<br><br>Select a style from the left sidebar.<br><br>Pick out a color in the bottom section-it will automatically be added to your color palette.<br><br>Click on any part of the sketch to add color to that part of the shoe.<br><br>If you make a mistake, click the Oops! button to undo your recent changes.<br><br>If you want to re-use a previous color from your palette, just click on the color swatch provided.<br><br> ENJOY!";
 
     const closebtn = document.createElement('span');
         closebtn.innerText = 'CLOSE X';
@@ -225,6 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     howToPlayBtn.onclick = function () {
         modal.style.display = "block";
+        // container.className = 'blur';
     };
 
     
@@ -232,10 +233,12 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "none";
     };
 
+
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
+        
     }; 
 
 
