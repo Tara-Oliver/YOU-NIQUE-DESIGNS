@@ -17,27 +17,27 @@ In You-nique Designs, users are able to:
 https://tarao1185.github.io/YOU-NIQUE-DESIGNS/
 
 **Technologies, Libraries, APIs**  
-*Webpack and Babel to bundle and transpile the source JavaScript code  
-*npm to manage project dependencies  
+* Webpack and Babel to bundle and transpile the source JavaScript code  
+* npm to manage project dependencies  
 
 **Implementation Timeline**  
-*Friday Afternoon & Weekend: Set up project, including getting webpack up and running. Create a working, responsive grid layout  
+* Friday Afternoon & Weekend: Set up project, including getting webpack up and running. Create a working, responsive grid layout  
 
-*Monday: Build out basic HTML structure using vanilla JS. Find all assets needed-including SVGs for the fashion sketches. Finish all functionality for color palette.  
+* Monday: Build out basic HTML structure using vanilla JS. Find all assets needed-including SVGs for the fashion sketches. Finish all functionality for color palette.  
 
-*Tuesday: Edit the SVGs in Adobe Illustrator to make sure all paths are defined and can accept color. Finish all functionality for rendering the correct sketch from left sidebar to the design area and adding colors to sketches.  
+* Tuesday: Edit the SVGs in Adobe Illustrator to make sure all paths are defined and can accept color. Finish all functionality for rendering the correct sketch from left sidebar to the design area and adding colors to sketches.  
 
-*Wednesday: Add modal for instructions and professional links to the page. Style entire page.  
+* Wednesday: Add modal for instructions and professional links to the page. Style entire page.  
 
-*Thursday Morning: Deploy to GitHub pages.  
+* Thursday Morning: Deploy to GitHub pages.  
 
 **Bonus Features**  
-*After user is done with a sketch:  
-  *Render a video visual of all changes made to sketch  
-  *Give user the ability to save a finished sketch to their local machine  
+* After user is done with a sketch:  
+  * Render a video visual of all changes made to sketch  
+  * Give user the ability to save a finished sketch to their local machine  
 
 **Code Snippet**  
-*This function gives user the ability to change the color of the selected path and created an array where all changes are stored so they can be undone later if neccesary.  
+* This function gives user the ability to change the color of the selected path and created an array where all changes are stored so they can be undone later if neccesary.  
 
 ```
     const paths = document.querySelectorAll('path');
