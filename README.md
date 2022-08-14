@@ -14,7 +14,7 @@ In You-nique Designs, users are able to:
 * Read about how to use the demo by clicking 'How to Play'  
 
 **Live Link:**  
-https://tarao1185.github.io/YOU-NIQUE-DESIGNS/
+https://tara-oliver.github.io/YOU-NIQUE-DESIGNS/
 
 **Technologies, Libraries, APIs**  
 * Webpack and Babel to bundle and transpile the source JavaScript code  
