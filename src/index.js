@@ -63,16 +63,16 @@ document.addEventListener("DOMContentLoaded", function () {
         pumpBtn.innerText = 'Design Pump!';
 
 
-        
+
     const flatImg = document.createElement('img');
         flatImg.src = 'assets/images/clean_flatform.svg';
-        
+
     const flatBtn = document.createElement('button');
         flatBtn.setAttribute("id", "flatBtn");
         flatBtn.setAttribute("class", "btn");
         flatBtn.innerText = 'Design Sandal!';
 
-        
+
     const sneakerImg = document.createElement('img');
     sneakerImg.src = 'assets/images/sneaker.svg';
 
@@ -91,11 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
     //add design area to page
     const design_area = document.createElement("div");
         design_area.setAttribute("class", "design");
-    
-    const design_title = document.createElement("div"); 
+
+    const design_title = document.createElement("div");
         design_title.innerText = 'Design away!';
         design_title.setAttribute = ("id", "design_title");
-    
+
     design_area.appendChild(design_title);
     container.appendChild(design_area);
 
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pickedColors.setAttribute("class", "pickedColors");
         palette.append(pickedColors);
 
-    let currentColor = '#000000';
+    let currentColor;
     colorPicker.onchange = function () {
         currentColor = colorPicker.value;
         let i = 0;
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         previousColor.setAttribute("class", "prevColor");
         previousColor.style.backgroundColor = currentColor;
-        for (let i = 0; i < 16; i++) {   
+        for (let i = 0; i < 16; i++) {
             pickedColors.appendChild(previousColor);
         }
     };
@@ -178,6 +178,8 @@ document.addEventListener("DOMContentLoaded", function () {
     pickedColors.onclick = function (event) {
         currentColor = event.target.style.backgroundColor;
     };
+
+
 
     const paths = document.querySelectorAll('path');
     let changes = [];
@@ -211,14 +213,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const modal_content = document.createElement("div");
         modal_content.setAttribute("class", "modal_content");
-    
+
     const instruct_txt = document.createElement('p');
-    instruct_txt.innerHTML = "Show off your design skills by making a one of a kind creation!<br><br>Select a style from the left sidebar.<br><br>Pick out a color in the bottom section-it will automatically be added to your color palette.<br><br>Click on any part of the sketch to add color to that part of the shoe.<br><br>If you make a mistake, click the Oops! button to undo your recent changes.<br><br>If you want to re-use a previous color from your palette, just click on the color swatch provided.<br><br> ENJOY!";
+    instruct_txt.innerHTML = "Show off your design skills by making a one of a kind creation!<br><br>Decide on a sketch to design from the left sidebar and click the button below when you're ready to begin. The choosen sketch will then show up in the main design area.<br><br>Click the color square next to 'Pick a color!' in the bottom section to open the color picker. Once you find the correct shade, it will automatically be added to your color palette when you press enter or click the left button on your mouse.<br><br>Click on any part of the sketch to add your most recent chosen color to that part of the shoe.<br><br>If you make a mistake, click the 'Oops!' button to undo your most recent change.<br><br>If you want to re-use previously color from your palette, just click on the color swatch provided.<br><br> ENJOY!";
 
     const closebtn = document.createElement('span');
         closebtn.innerText = 'CLOSE X';
         closebtn.setAttribute('class', "close");
-    
+
     modal_content.append(instruct_txt, closebtn);
     modal.append(modal_content);
     container.append(modal);
@@ -228,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // container.className = 'blur';
     };
 
-    
+
     closebtn.onclick = function () {
         modal.style.display = "none";
     };
@@ -238,8 +240,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target == modal) {
             modal.style.display = "none";
         }
-        
-    }; 
+
+    };
 
 
 });

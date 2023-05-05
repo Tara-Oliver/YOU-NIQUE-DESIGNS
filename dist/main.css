@@ -136,17 +136,33 @@ table {
   border-spacing: 0;
 }
 
+* {
+  box-sizing: border-box;
+  border-collapse: inherit;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100%;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-height: -webkit-fill-available;
+  scroll-behavior: smooth;
+  background-color: #f6f6f2;
 }
 
 .title {
   justify-content: center;
   margin: auto;
   display: flex;
-  padding: 10px;
+  padding: 25px;
 }
 
 .logo {
@@ -155,8 +171,8 @@ body {
   float: left;
   margin: 2px;
   display: flex;
-  -ms-transform: translateY(-60%);
-  transform: translateY(-60%);
+  -ms-transform: translateY(-130%);
+  transform: translateY(-130%);
 }
 
 .logo:hover {
@@ -168,7 +184,6 @@ body {
   min-height: 100%;
   position: relative;
   font-family: "Quicksand", sans-serif;
-  font-weight: bold;
   font-size: 20px;
   display: grid;
   grid-gap: 40px;
@@ -190,7 +205,7 @@ body {
 .left_side {
   grid-row-start: 2;
   grid-row-end: 4;
-  border: 4px inset #5AC4A9;
+  border: 4px inset #388087;
   overflow: auto;
   text-align: center;
 }
@@ -211,31 +226,22 @@ svg {
 }
 
 ::-webkit-scrollbar-track {
-  background: #83E2c9;
+  background: #c2edce;
   border-radius: 100vw;
   margin-block: 0.5em;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #edaaee;
-}
-
 ::-webkit-scrollbar-thumb {
-  background: #EB69EC;
-  border: 0.25em solid #83E2c9;
+  background: #c2edce;
   border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-track-piece {
-  background: #F3933B;
+  background: #1f4649;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #f2be8c;
-}
-
-::-webkit-resizer {
-  background: #EB69EC;
+  background: #c2edce;
 }
 
 .design {
@@ -243,7 +249,7 @@ svg {
   grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 4;
-  border: 4px inset #EB69EC;
+  border: 4px inset #badfe7;
   justify-content: center;
   display: inline-block;
 }
@@ -257,7 +263,7 @@ svg {
   grid-column-start: 1;
   grid-column-end: span 3;
   vertical-align: text-top;
-  border: 4px inset #F3933B;
+  border: 4px inset #6fb3b8;
 }
 
 .pickedColors {
@@ -285,7 +291,7 @@ path {
 .btn {
   background-color: rgb(0, 0, 0);
   border: none;
-  color: white;
+  color: #F6F6F2;
   padding: 10px 20px;
   text-align: center;
   font-family: "Marker Felt", fantasy;
@@ -297,9 +303,9 @@ path {
 }
 
 .btn:hover, .playbtn:hover, .oopsbtn:hover {
-  background-color: #EB69EC;
+  background-color: #badfe7;
   color: black;
-  border: 2px solid #F3933B;
+  border: 2px solid #1f4649;
 }
 
 .oopsbtn {
@@ -307,7 +313,7 @@ path {
   background-color: rgb(0, 0, 0);
   border: none;
   top: -80%;
-  color: white;
+  color: #F6F6F2;
   padding: 10px 20px;
   font-family: "Marker Felt", fantasy;
   font-size: 15px;
@@ -322,21 +328,15 @@ path {
   border: none;
   margin: 2px;
   display: flex;
-  -ms-transform: translateY(-60%);
-  transform: translateY(-60%);
-  color: white;
+  -ms-transform: translateY(-140%);
+  transform: translateY(-140%);
+  color: #F6F6F2;
   padding: 10px 20px;
   font-family: "Marker Felt", fantasy;
   font-size: 15px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 16px;
-}
-
-.btn1:hover {
-  background-color: #EB69EC;
-  color: black;
-  border: 2px solid #F3933B;
 }
 
 .modal {
@@ -355,19 +355,19 @@ path {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  color: #f2be8c;
+  color: #c2edce;
+  overflow: auto;
 }
 
 .close {
   color: #5AC4A9;
   float: right;
   font-size: 20px;
-  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #EB69EC;
+  color: #1f4649;
   text-decoration: none;
   cursor: pointer;
 }
