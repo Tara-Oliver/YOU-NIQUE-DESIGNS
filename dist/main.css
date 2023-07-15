@@ -1,10 +1,11 @@
-/*!*************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
-  \*************************************************************************************************************************************/
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+
 html,
 body,
 div,
@@ -86,12 +87,12 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -106,39 +107,38 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 
 body {
-  line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+    content: '';
+    content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-
-/**********************/
-/***GENERAL STYLES*****/
-/**********************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 * {
   box-sizing: border-box;
   border-collapse: inherit;
@@ -148,6 +148,10 @@ table {
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -163,22 +167,50 @@ body {
 }
 
 .container {
-  padding: 25px;
+  padding: 2.5rem;
   min-height: 100%;
-  position: relative;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 20px;
+  font-size: 2rem;
   text-transform: uppercase;
   display: grid;
-  grid-gap: 40px;
+  grid-gap: 4rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 200px 400px 200px 300px;
+  grid-template-rows: 20rem 20rem 20rem 20rem;
   overflow: auto;
 }
 
+.btn,
+.btn:link,
+.btn:visited {
+  background-color: rgb(0, 0, 0);
+  color: #f6f6f2;
+  padding: 1rem 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 0.4rem 0.2rem;
+  border-radius: 1.6rem;
+  transition: all ease 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  /* Put transition on original "state" */
+  /* transition: background-color 0.3s; */
+}
+
+.box-borders {
+  border-radius: 1.6rem;
+  border-width: 0.4rem;
+  border-style: inset;
+  padding: 0.8rem;
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 1px;
+  width: 1rem;
+  height: 0.1rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -201,78 +233,45 @@ body {
   background: #c2edce;
 }
 
-.btn {
-  background-color: rgb(0, 0, 0);
-  border: none;
-  color: #f6f6f2;
-  padding: 10px 20px;
-  text-align: center;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 15px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
-  transition: all ease 0.3s;
+.header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border-color: #e6e6e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-image: url("/assets/images/bitmap.png"), url("/assets/images/waves.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/**********************/
-/********HEADER********/
-/**********************/
-.title {
-  width: 46%;
-  align-self: center;
+.yd-logo {
+  display: none;
 }
 
 .logo {
-  margin: 2px;
   justify-self: flex-start;
 }
 
 .logo img {
-  max-width: 5%;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.2rem;
+  transition: all ease 0.3s;
 }
 
-.logo:hover {
+.logo img:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
 
-.header {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  padding: 5px;
-  border: 4px inset #e6e6e2;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 16px;
-}
-
-.controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0 5px;
+.logo img {
+  margin: -0.6rem 0.6rem;
 }
 
 .playbtn {
-  background-color: rgb(0, 0, 0);
-  border: none;
-  align-self: start;
-  color: #f6f6f2;
-  padding: 10px 20px;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 15px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
-  white-space: nowrap;
+  margin: -0.2rem 0.6rem;
 }
 
 /**********************/
@@ -281,21 +280,23 @@ body {
 .left_side {
   grid-row-start: 2;
   grid-row-end: 4;
-  border: 4px inset #388087;
+  border-color: #388087;
   overflow: auto;
   text-align: center;
-  border-radius: 16px;
-  padding: 8px;
+}
+
+.left_side img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 1.2rem 0;
 }
 
 svg {
-  max-width: 85%;
-  max-height: 85%;
+  width: 85%;
+  height: 85%;
   display: none;
   text-align: center;
-  margin-left: 50px;
-  -ms-transform: translateY(30%);
-  transform: translateY(5%);
+  margin-left: 5rem;
 }
 
 /**********************/
@@ -306,30 +307,17 @@ svg {
   grid-row-end: 4;
   grid-column-start: 2;
   grid-column-end: 4;
-  border: 4px inset #badfe7;
-  border-radius: 16px;
+  border-color: #badfe7;
   justify-content: center;
   display: inline-block;
-  padding: 8px;
 }
 
 .design_title {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .oopsbtn {
   float: right;
-  background-color: rgb(0, 0, 0);
-  border: none;
-  top: -80%;
-  color: #f6f6f2;
-  padding: 10px 20px;
-  font-family: "Josefin Sans", sans-serif;
-  text-transform: uppercase;
-  font-size: 15px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
 }
 
 /**********************/
@@ -340,9 +328,7 @@ svg {
   grid-column-start: 1;
   grid-column-end: span 3;
   vertical-align: text-top;
-  border: 4px inset #6fb3b8;
-  border-radius: 16px;
-  padding: 8px;
+  border-color: #6fb3b8;
 }
 
 .pickedColors {
@@ -364,16 +350,18 @@ path,
 }
 
 .imgcontainer {
-  overflow: auto;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
-.btn:hover,
-.playbtn:hover,
-.oopsbtn:hover {
-  background-color: #badfe7;
+.btn:hover {
+  background-color: #c2edce;
   color: black;
   box-shadow: inset 0 0 0 2px #1f4649;
+  transform: scale(1.03);
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .modal {
@@ -397,14 +385,91 @@ path,
 }
 
 .close {
-  color: #5ac4a9;
+  color: #c2edce;
   float: right;
   font-size: 20px;
 }
 
 .close:hover,
 .close:focus {
-  color: #1f4649;
+  color: #5ac4a9;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (orientation: portrait) {
+  .orientation-message {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 3.2rem;
+    text-align: center;
+    padding-top: 50%;
+    z-index: 9999;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .orientation-message img {
+    max-width: 85%;
+    max-height: 85%;
+    margin-top: 4rem;
+  }
+}
+@media (orientation: landscape) {
+  .orientation-message {
+    display: none;
+  }
+}
+/**************************/
+/* BELOW 800px*/
+/**************************/
+@media (max-width: 50em) and (orientation: landscape) {
+  .header {
+    justify-content: center;
+  }
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 0.7rem 1.4rem;
+    white-space: break-spaces;
+    font-size: 1.4rem;
+  }
+  .logo img {
+    margin: -0.6rem 0.6rem;
+  }
+  .playbtn {
+    margin: -0.2rem 0.6rem;
+  }
+}
+/**************************/
+/* BELOW 740px (Phones) */
+/**************************/
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+@media (max-width: 34em) and (orientation: landscape) {
+  .container {
+    grid-gap: 2rem;
+    grid-template-rows: 12rem 10rem 10rem 12rem;
+    font-size: 1.5rem;
+  }
+  .playbtn {
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+  }
+  .logo img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  #pumpBtn,
+  #flatBtn,
+  #snkrBtn,
+  #oopsBtn {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+  }
 }

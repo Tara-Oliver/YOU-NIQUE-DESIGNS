@@ -1,251 +1,317 @@
-document.addEventListener("DOMContentLoaded", function () {
-	const body = document.body;
+function initializeApp() {
 	const container = document.createElement("div");
+	window.appContainer = container;
 	container.setAttribute("class", "container");
-	body.appendChild(container);
+	document.body.appendChild(container);
 
-	//HEADER SECTION//
+	// Import the dependencies and call the init functions
+	import("./scripts/header.js")
+		.then((headerModule) => {
+			headerModule.init();
+		})
+		.catch((error) => {
+			console.error("Error importing header module:", error);
+		});
 
-	//add header to top of page
-	const header = document.createElement("div");
-	header.setAttribute("class", "header");
-	header.style.backgroundImage = "url('assets/images/waves.svg')";
-	container.appendChild(header);
+	import("./scripts/sidebar.js")
+		.then((sidebarModule) => {
+			sidebarModule.init(container);
+			const { pumpBtn, flatBtn, snkrBtn } = sidebarModule;
+			// Access and use the exported buttons as needed
+		})
+		.catch((error) => {
+			console.error("Error importing sidebar module:", error);
+		});
 
-	const title = document.createElement("img");
-	// title.innerText = 'You-nique Designs';
-	title.setAttribute("class", "title");
-	// title.src = "assets/images/text-1659028942969.png";
-	title.src = "assets/images/bitmap.png";
+	import("./scripts/design_area.js")
+		.then((designModule) => {
+			designModule.init(container);
+			const { oopsBtn } = designModule;
+		})
+		.catch((error) => {
+			console.error("Error importing design module:", error);
+		});
 
-	header.appendChild(title);
+	import("./scripts/palette.js")
+		.then((paletteModule) => {
+			paletteModule.init(container);
+			const { changes } = paletteModule;
+		})
+		.catch((error) => {
+			console.error("Error importing palette module:", error);
+		});
+}
 
-	const controls = document.createElement("div");
-	controls.setAttribute("class", "controls");
-	const controlLeft = document.createElement("div");
-	const controlRight = document.createElement("div");
-	controls.append(controlLeft, controlRight);
+document.addEventListener("DOMContentLoaded", initializeApp);
+// import * as sidebarModule from "./scripts/sidebar.js";
+// import * as headerModule from "./scripts/header.js";
 
-	const gitlink = document.createElement("a"); // create the link
-	gitlink.setAttribute(
-		"href",
-		"https://github.com/tarao1185/YOU-NIQUE-DESIGNS.git"
-	); // set link path
+// import("./scripts/header").then((header) => {
+// 	// Use the imported module for the header
+// 	header.init();
+// });
 
-	const github_logo = document.createElement("img");
-	github_logo.src = "assets/images/Github_logo.png";
-	gitlink.setAttribute("class", "logo");
-	gitlink.append(github_logo); // append to link
+// import("./scripts/sidebar").then((sidebar) => {
+// 	// Use the imported module for the sidebar
+// 	sidebar.init();
+// });
 
-	const linkedin_logo = document.createElement("img");
-	linkedin_logo.src = "assets/images/linkedin_logo.png";
+// import("./scripts/design_area").then((design) => {
+// 	// Use the imported module for the design
+// 	design.init();
+// });
 
-	const linkedin_link = document.createElement("a");
-	linkedin_link.setAttribute("href", "https://www.linkedin.com/in/tara-oliver"); // set link path
-	linkedin_link.append(linkedin_logo);
+// document.addEventListener("DOMContentLoaded", function () {
+// 	// npm run watch to start server
 
-	linkedin_link.setAttribute("class", "logo");
-	controlLeft.append(gitlink, linkedin_link);
+// 	const body = document.body;
+// 	const container = document.createElement("div");
+// 	window.appContainer = container;
+// 	container.setAttribute("class", "container");
+// 	body.appendChild(container);
 
-	const howToPlayBtn = document.createElement("button");
-	howToPlayBtn.setAttribute("class", "playbtn");
-	howToPlayBtn.innerText = "How to Play";
-	controlRight.appendChild(howToPlayBtn);
+// 	import * as sidebarModule from "./scripts/sidebar.js";
+// 	import * as headerModule from "./scripts/header.js";
 
-	header.append(controls);
+// 	sidebarModule.init(container);
+// 	headerModule.init();
+///////////////////////////////////////////////////////////////////////////
+////////////////////////// HEADER SECTION /////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
-	//SIDEBAR SECTION//
+// //create header div for the top of page with class of header
+// const header = document.createElement("div");
+// header.setAttribute("class", "header box-borders");
 
-	//add left sidebar to page
-	const left_sidebar = document.createElement("div");
-	left_sidebar.innerText = "Choose a style";
-	left_sidebar.setAttribute("class", "left_side");
-	container.appendChild(left_sidebar);
+// //add wave bkgrd image to header div
+// header.style.backgroundImage = "url('assets/images/waves.svg')";
+// container.appendChild(header);
 
-	const img_container = document.createElement("div");
-	img_container.setAttribute("class", "imgcontainer");
+// //create YD logo image with class of yd-logo
+// const ydLogo = document.createElement("img");
+// ydLogo.setAttribute("class", "yd-logo");
+// ydLogo.setAttribute("alt", "younique design logo");
+// ydLogo.src = "assets/images/bitmap.png";
 
-	// //define pump image, create div, add div to sidebar
-	const pumpImg = document.createElement("img");
-	pumpImg.src = "assets/images/clean_tstrap.svg";
+// // add YD logo to the header div
+// header.appendChild(ydLogo);
 
-	const pumpBtn = document.createElement("button");
-	pumpBtn.setAttribute("id", "pumpBtn");
-	pumpBtn.setAttribute("class", "btn");
-	pumpBtn.innerText = "Design Pump";
+// // create headerBtm div for the bottom of the header with class of header-btm
+// const headerBtm = document.createElement("div");
+// headerBtm.setAttribute("class", "header-btm");
 
-	const flatImg = document.createElement("img");
-	flatImg.src = "assets/images/clean_flatform.svg";
+// //create contactLinksDiv(LEFT) and playBtmDiv(RIGHT) and add to the header btm div
+// const contactLinksDiv = document.createElement("div");
+// const playBtnDiv = document.createElement("div");
+// headerBtm.append(contactLinksDiv, playBtnDiv);
 
-	const flatBtn = document.createElement("button");
-	flatBtn.setAttribute("id", "flatBtn");
-	flatBtn.setAttribute("class", "btn");
-	flatBtn.innerText = "Design Sandal";
+// //create link for gitHub page
+// const gitlink = document.createElement("a"); // create the link
+// gitlink.setAttribute(
+// 	"href",
+// 	"https://github.com/tarao1185/YOU-NIQUE-DESIGNS.git"
+// );
 
-	const sneakerImg = document.createElement("img");
-	sneakerImg.src = "assets/images/sneaker.svg";
+// //create gitHub logo image with class of logo
+// const github_logo = document.createElement("img");
+// github_logo.src = "assets/images/Github_logo.png";
+// gitlink.setAttribute("class", "logo");
+// gitlink.setAttribute("alt", "gitHub logo");
 
-	const snkrBtn = document.createElement("button");
-	snkrBtn.setAttribute("id", "snkrBtn");
-	snkrBtn.setAttribute("class", "btn");
-	snkrBtn.innerText = "Design Sneaker";
+// //add the gitHub logo image to the gitHub link
+// gitlink.append(github_logo);
 
-	img_container.append(pumpImg, pumpBtn, flatImg, flatBtn, sneakerImg, snkrBtn);
-	left_sidebar.append(img_container);
+// //create link for LinkedIn page
+// const linkedin_link = document.createElement("a");
+// linkedin_link.setAttribute("href", "https://www.linkedin.com/in/tara-oliver");
 
-	//DESIGN AREA SECTION//
+// //create LinkedIn logo image with class of logo
+// const linkedin_logo = document.createElement("img");
+// linkedin_logo.src = "assets/images/linkedin_logo.png";
+// linkedin_link.setAttribute("class", "logo");
+// linkedin_link.setAttribute("alt", "LinkedIn logo");
 
-	//add design area to page
-	const design_area = document.createElement("div");
-	design_area.setAttribute("class", "design");
+// //add the LinkedIn logo image to the LinkedIn link
+// linkedin_link.append(linkedin_logo);
 
-	const design_title = document.createElement("div");
-	design_title.innerText = "Design away";
-	design_title.setAttribute = ("id", "design_title");
+// // add LinkedIn and gitHub logos to the contactLinks div(left side of header btm)
+// contactLinksDiv.append(gitlink, linkedin_link);
 
-	design_area.appendChild(design_title);
-	container.appendChild(design_area);
+// //create how to play button with classes btn and playbtn
+// const howToPlayBtn = document.createElement("button");
+// howToPlayBtn.setAttribute("class", "btn playbtn");
+// howToPlayBtn.innerText = "How to Play";
 
-	const oopsBtn = document.createElement("button");
-	oopsBtn.innerText = "Oops";
-	oopsBtn.setAttribute("id", "oopsBtn");
-	oopsBtn.setAttribute("class", "oopsbtn");
-	design_title.appendChild(oopsBtn);
+// // add play button to the playbtn div(right side of header btm)
+// playBtnDiv.appendChild(howToPlayBtn);
 
-	oopsBtn.onclick = function () {
-		changes[changes.length - 1].element.style.fill =
-			changes[changes.length - 1].previousColor;
-		changes.pop();
-	};
+// //add header  btm div to the header
+// header.append(headerBtm);
 
-	const largePump = document.querySelector("#Layer_1");
-	const largeFlat = document.querySelector("#Layer_2");
-	const largeSnkr = document.querySelector("#Layer_3");
+///////////////////////////////////////////////////////////////////////////
+////////////////////////// SIDEBAR SECTION /////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
-	design_area.append(largePump, largeSnkr, largeFlat);
+//add left sidebar to page
+// const left_sidebar = document.createElement("div");
+// left_sidebar.innerText = "Choose a style";
+// left_sidebar.setAttribute("class", "left_side box-borders");
+// container.appendChild(left_sidebar);
 
-	document.getElementById("pumpBtn").addEventListener("click", displayImage);
-	document.getElementById("flatBtn").addEventListener("click", displayImage);
-	document.getElementById("snkrBtn").addEventListener("click", displayImage);
+// const img_container = document.createElement("div");
+// img_container.setAttribute("class", "imgcontainer");
 
-	function displayImage(ev) {
-		if (ev.currentTarget.id == "pumpBtn") {
-			document.querySelector("#Layer_2").style.display = "none";
-			document.querySelector("#Layer_3").style.display = "none";
-			document.querySelector("#Layer_1").style.display = "inline-block";
-		} else if (ev.currentTarget.id == "flatBtn") {
-			document.querySelector("#Layer_2").style.display = "inline-block";
-			document.querySelector("#Layer_1").style.display = "none";
-			document.querySelector("#Layer_3").style.display = "none";
-		} else {
-			document.querySelector("#Layer_2").style.display = "none";
-			document.querySelector("#Layer_1").style.display = "none";
-			document.querySelector("#Layer_3").style.display = "inline-block";
-		}
-	}
+// // //define pump image, create div, add div to sidebar
+// const pumpImg = document.createElement("img");
+// pumpImg.src = "assets/images/clean_tstrap.svg";
+// pumpImg.setAttribute("alt", "sketch of T-strap kitten heel pump");
 
-	//PALETTE SECTION//
+// const pumpBtn = document.createElement("button");
+// pumpBtn.setAttribute("id", "pumpBtn");
+// pumpBtn.setAttribute("class", "btn");
+// pumpBtn.innerText = "Design Pump";
 
-	//add palette to page
-	const palette = document.createElement("div");
+// const flatImg = document.createElement("img");
+// flatImg.src = "assets/images/clean_flatform.svg";
+// flatImg.setAttribute("alt", "sketch of single band flatform sandal");
 
-	palette.setAttribute("class", "palette");
-	// palette.innerText = "Pick a color" + "&rarr;";
-	const span = document.createElement("span");
+// const flatBtn = document.createElement("button");
+// flatBtn.setAttribute("id", "flatBtn");
+// flatBtn.setAttribute("class", "btn");
+// flatBtn.innerText = "Design Sandal";
 
-	const textNode = document.createTextNode("Pick a color ");
-	span.appendChild(textNode);
+// const sneakerImg = document.createElement("img");
+// sneakerImg.src = "assets/images/sneaker.svg";
+// sneakerImg.setAttribute("alt", "sketch of low profile lace up sneaker");
 
-	// const arrowNode = document.createTextNode(" " + "\u2192"); // Unicode character code for the right arrow
-	// span.appendChild(arrowNode);
+// const snkrBtn = document.createElement("button");
+// snkrBtn.setAttribute("id", "snkrBtn");
+// snkrBtn.setAttribute("class", "btn");
+// snkrBtn.innerText = "Design Sneaker";
 
-	// document.body.appendChild(span);
+// img_container.append(pumpImg, pumpBtn, flatImg, flatBtn, sneakerImg, snkrBtn);
+// left_sidebar.append(img_container);
 
-	palette.appendChild(span);
+//DESIGN AREA SECTION//
 
-	container.appendChild(palette);
+//add design area to page
 
-	//color picker
-	const colorPicker = document.createElement("input");
-	colorPicker.setAttribute("type", "color");
-	colorPicker.setAttribute("class", "colorPicker");
-	colorPicker.setAttribute("value", "#ffffff");
+// import { pumpBtn, flatBtn, snkrBtn } from "./sidebar";
+// const design_area = document.createElement("div");
+// design_area.setAttribute("class", "design box-borders");
 
-	palette.append(colorPicker);
+// const design_title = document.createElement("div");
+// design_title.innerText = "Design away";
+// design_title.setAttribute = ("id", "design_title");
 
-	//div to store colors picked by user
-	const pickedColors = document.createElement("div");
-	pickedColors.setAttribute("class", "pickedColors");
-	palette.append(pickedColors);
+// design_area.appendChild(design_title);
+// container.appendChild(design_area);
 
-	let currentColor;
-	colorPicker.onchange = function () {
-		currentColor = colorPicker.value;
-		let i = 0;
-		let previousColor = document.createElement("div");
+// const oopsBtn = document.createElement("button");
+// oopsBtn.innerText = "Oops!";
+// oopsBtn.setAttribute("id", "oopsBtn");
+// oopsBtn.setAttribute("class", "btn oopsbtn");
+// design_title.appendChild(oopsBtn);
 
-		previousColor.setAttribute("class", "prevColor");
-		previousColor.style.backgroundColor = currentColor;
-		for (let i = 0; i < 16; i++) {
-			pickedColors.appendChild(previousColor);
-		}
-	};
+// oopsBtn.onclick = function () {
+// 	changes[changes.length - 1].element.style.fill =
+// 		changes[changes.length - 1].previousColor;
+// 	changes.pop();
+// };
 
-	pickedColors.onclick = function (event) {
-		currentColor = event.target.style.backgroundColor;
-	};
+// const largePump = document.querySelector("#Layer_1");
+// const largeFlat = document.querySelector("#Layer_2");
+// const largeSnkr = document.querySelector("#Layer_3");
 
-	const paths = document.querySelectorAll("path");
-	let changes = [];
-	let orgColor = "#ffffff";
+// design_area.append(largePump, largeSnkr, largeFlat);
 
-	paths.forEach((path) => {
-		path.onclick = function (event) {
-			orgColor = event.target.style.fill;
+// document.getElementById("pumpBtn").addEventListener("click", displayImage);
+// document.getElementById("flatBtn").addEventListener("click", displayImage);
+// document.getElementById("snkrBtn").addEventListener("click", displayImage);
 
-			const action = {
-				element: event.target,
-				previousColor: orgColor,
-			};
+// function displayImage(ev) {
+// 	if (ev.currentTarget.id == "pumpBtn") {
+// 		document.querySelector("#Layer_2").style.display = "none";
+// 		document.querySelector("#Layer_3").style.display = "none";
+// 		document.querySelector("#Layer_1").style.display = "inline-block";
+// 	} else if (ev.currentTarget.id == "flatBtn") {
+// 		document.querySelector("#Layer_2").style.display = "inline-block";
+// 		document.querySelector("#Layer_1").style.display = "none";
+// 		document.querySelector("#Layer_3").style.display = "none";
+// 	} else {
+// 		document.querySelector("#Layer_2").style.display = "none";
+// 		document.querySelector("#Layer_1").style.display = "none";
+// 		document.querySelector("#Layer_3").style.display = "inline-block";
+// 	}
+// }
 
-			console.log(changes);
-			event.target.style.fill = currentColor;
-			changes.push(action);
-		};
-	});
+//PALETTE SECTION//
 
-	//ADD MODAL TO PAGE
+// //add palette to page
+// const palette = document.createElement("div");
 
-	const modal = document.createElement("div");
-	modal.setAttribute("class", "modal");
+// palette.setAttribute("class", "palette box-borders");
+// // palette.innerText = "Pick a color" + "&rarr;";
+// const span = document.createElement("span");
 
-	const modal_content = document.createElement("div");
-	modal_content.setAttribute("class", "modal_content");
+// const textNode = document.createTextNode("Pick a color ");
+// span.appendChild(textNode);
 
-	const instruct_txt = document.createElement("p");
-	instruct_txt.innerHTML =
-		"Show off your design skills by making a one of a kind creation!<br><br>Decide on a sketch to design from the left sidebar and click the button below when you're ready to begin. The choosen sketch will then show up in the main design area.<br><br>Click the color square next to 'Pick a color!' in the bottom section to open the color picker. Once you find the correct shade, it will automatically be added to your color palette when you press enter or click the left button on your mouse.<br><br>Click on any part of the sketch to add your most recent chosen color to that part of the shoe.<br><br>If you make a mistake, click the 'Oops!' button to undo your most recent change.<br><br>If you want to re-use previously color from your palette, just click on the color swatch provided.<br><br> ENJOY!";
+// // const arrowNode = document.createTextNode(" " + "\u2192"); // Unicode character code for the right arrow
+// // span.appendChild(arrowNode);
 
-	const closebtn = document.createElement("span");
-	closebtn.innerText = "CLOSE X";
-	closebtn.setAttribute("class", "close");
+// // document.body.appendChild(span);
 
-	modal_content.append(instruct_txt, closebtn);
-	modal.append(modal_content);
-	container.append(modal);
+// palette.appendChild(span);
 
-	howToPlayBtn.onclick = function () {
-		modal.style.display = "block";
-		// container.className = 'blur';
-	};
+// container.appendChild(palette);
 
-	closebtn.onclick = function () {
-		modal.style.display = "none";
-	};
+// //color picker
+// const colorPicker = document.createElement("input");
+// colorPicker.setAttribute("type", "color");
+// colorPicker.setAttribute("class", "colorPicker");
+// colorPicker.setAttribute("value", "#ffffff");
 
-	window.onclick = function (event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	};
-});
+// palette.append(colorPicker);
+
+// //div to store colors picked by user
+// const pickedColors = document.createElement("div");
+// pickedColors.setAttribute("class", "pickedColors");
+// palette.append(pickedColors);
+
+// let currentColor;
+// colorPicker.onchange = function () {
+// 	currentColor = colorPicker.value;
+// 	let i = 0;
+// 	let previousColor = document.createElement("div");
+
+// 	previousColor.setAttribute("class", "prevColor");
+// 	previousColor.style.backgroundColor = currentColor;
+// 	for (let i = 0; i < 16; i++) {
+// 		pickedColors.appendChild(previousColor);
+// 	}
+// };
+
+// pickedColors.onclick = function (event) {
+// 	currentColor = event.target.style.backgroundColor;
+// };
+
+// const paths = document.querySelectorAll("path");
+// let changes = [];
+// let orgColor = "#ffffff";
+
+// paths.forEach((path) => {
+// 	path.onclick = function (event) {
+// 		orgColor = event.target.style.fill;
+
+// 		const action = {
+// 			element: event.target,
+// 			previousColor: orgColor,
+// 		};
+
+// 		console.log(changes);
+// 		event.target.style.fill = currentColor;
+// 		changes.push(action);
+// 	};
+// });
+// });
