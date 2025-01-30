@@ -1,11 +1,11 @@
-export function init() {
-	const container = window.appContainer;
+export function init(contentWrapper) {
+	// const container = window.appContainer;
 
 	//create header div for the top of page with class of header
 	const header = document.createElement("div");
 	header.setAttribute("class", "header box-borders");
 
-	container.appendChild(header);
+	contentWrapper.appendChild(header);
 
 	// //add wave bkgrd image to header div
 	header.style.backgroundImage = "url('assets/images/bg_logo.png')";
@@ -55,6 +55,7 @@ export function init() {
 	//create how to play button with classes btn and playbtn
 	const howToPlayBtn = document.createElement("button");
 	howToPlayBtn.setAttribute("class", "btn playbtn");
+	howToPlayBtn.setAttribute("id", "modalBtn");
 	howToPlayBtn.innerText = "How to Play";
 
 	// add play button to the playbtn div(right side of header btm)
@@ -66,36 +67,22 @@ export function init() {
 
 	//ADD MODAL TO PAGE
 
-	const modal = document.createElement("div");
-	modal.setAttribute("class", "modal");
+	// howToPlayBtn.onclick = function () {
+	// 	modal.style.display = "block";
+	// 	container.style.filter = "blur(4px)";
+	// 	modal.style.filter = "none";
+	// };
 
-	const modal_content = document.createElement("div");
-	modal_content.setAttribute("class", "modal_content");
+	// closebtn.onclick = function () {
+	// 	modal.style.display = "none";
 
-	const instruct_txt = document.createElement("p");
-	instruct_txt.innerHTML =
-		"Show off your design skills by making a one of a kind creation!<br><br>Decide on a sketch to design from the left sidebar and click the button below when you're ready to begin. The choosen sketch will then show up in the main design area.<br><br>Click the color square next to 'Pick a color!' in the bottom section to open the color picker. Once you find the correct shade, it will automatically be added to your color palette when you press enter or click the left button on your mouse.<br><br>Click on any part of the sketch to add your most recent chosen color to that part of the shoe.<br><br>If you make a mistake, click the 'Oops!' button to undo your most recent change.<br><br>If you want to re-use previously color from your palette, just click on the color swatch provided.<br><br> ENJOY!";
-
-	const closebtn = document.createElement("span");
-	closebtn.innerText = "CLOSE X";
-	closebtn.setAttribute("class", "close");
-
-	modal_content.append(instruct_txt, closebtn);
-	modal.append(modal_content);
-	container.append(modal);
-
-	howToPlayBtn.onclick = function () {
-		modal.style.display = "block";
-		// container.className = 'blur';
-	};
-
-	closebtn.onclick = function () {
-		modal.style.display = "none";
-	};
-
-	window.onclick = function (event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	};
+	// 	// Remove blur when modal closes
+	// 	container.style.filter = "none";
+	// };
+	// window.onclick = function (event) {
+	// 	if (event.target == modal) {
+	// 		modal.style.display = "none";
+	// 	}
+	// };
 }
+// linkedin_link.setAttribute("class", "logo");

@@ -1,6 +1,11 @@
 import { changes } from "./palette.js";
 
-const container = window.appContainer;
+export const oopsBtn = document.createElement("button");
+oopsBtn.innerText = "Oops!";
+oopsBtn.setAttribute("id", "oopsBtn");
+oopsBtn.setAttribute("class", "btn oopsbtn");
+
+// const contentWrapper = window.appContainer;
 
 const design_area = document.createElement("div");
 design_area.setAttribute("class", "design box-borders");
@@ -10,12 +15,8 @@ design_title.innerText = "Design away";
 design_title.setAttribute = ("id", "design_title");
 
 design_area.appendChild(design_title);
-container.appendChild(design_area);
+contentWrapper.appendChild(design_area);
 
-export const oopsBtn = document.createElement("button");
-oopsBtn.innerText = "Oops!";
-oopsBtn.setAttribute("id", "oopsBtn");
-oopsBtn.setAttribute("class", "btn oopsbtn");
 design_title.appendChild(oopsBtn);
 
 oopsBtn.onclick = function () {
@@ -50,7 +51,7 @@ function displayImage(ev) {
 	}
 }
 
-export function init(container) {
+export function init(contentWrapper) {
 	// Use the container element for sidebar initialization
 	// ...
 }
