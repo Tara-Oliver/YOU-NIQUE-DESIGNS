@@ -7,6 +7,10 @@ export function init() {
 
 	container.appendChild(header);
 
+	// //add wave bkgrd image to header div
+	header.style.backgroundImage = "url('assets/images/bg_logo.png')";
+	// header.style.backgroundImage = "url('assets/images/waves.svg')";
+
 	//create contactLinksDiv(LEFT) and playBtmDiv(RIGHT) and add to the header btm div
 	const contactLinksDiv = document.createElement("div");
 	const playBtnDiv = document.createElement("div");
@@ -24,6 +28,7 @@ export function init() {
 	//create gitHub logo image with class of logo
 	const github_logo = document.createElement("img");
 	github_logo.src = "assets/images/github.svg";
+	// github_logo.src = "assets/images/waves.svg";
 	gitlink.setAttribute("class", "logo");
 	gitlink.setAttribute("alt", "gitHub logo");
 	gitlink.setAttribute("aria-label", "gitHub logo and link");
