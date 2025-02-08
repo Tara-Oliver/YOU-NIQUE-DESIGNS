@@ -66,13 +66,14 @@ function initializeApp() {
 		"Show off your design skills by making a one of a kind creation!<br><br>Decide on a sketch to design from the left sidebar and click the button below when you're ready to begin. The choosen sketch will then show up in the main design area.<br><br>Click the color square next to 'Pick a color!' in the bottom section to open the color picker. Once you find the correct shade, it will automatically be added to your color palette when you press enter or click the left button on your mouse.<br><br>Click on any part of the sketch to add your most recent chosen color to that part of the shoe.<br><br>If you make a mistake, click the 'Oops!' button to undo your most recent change.<br><br>If you want to re-use previously color from your palette, just click on the color swatch provided.<br><br> ENJOY!";
 
 	const closebtn = document.createElement("span");
-	closebtn.innerText = "CLOSE X";
+	closebtn.innerText = "X";
 	closebtn.setAttribute("class", "close");
 	closebtn.onclick = function () {
 		modal.style.display = "none";
 		contentWrapper.style.filter = "none";
 	};
-	modal_content.append(instruct_txt, closebtn);
+
+	modal_content.append(closebtn, instruct_txt);
 	modal.append(modal_content);
 	document.body.append(modal);
 

@@ -46,11 +46,25 @@ export function init(contentWrapper) {
 	linkedin_link.setAttribute("alt", "LinkedIn logo");
 	linkedin_link.setAttribute("aria-label", "LinkedIn logo and link");
 
+	//create link for initial page
+	const initialLink = document.createElement("a"); // create the link
+	initialLink.setAttribute("href", "https://tara-oliver.vercel.app/");
+
+	//create initial logo image with class of logo
+	const initial_logo = document.createElement("img");
+	initial_logo.src = "assets/images/initial.svg";
+	// initial_logo.src = "assets/images/waves.svg";
+	initialLink.setAttribute("class", "logo");
+	initialLink.setAttribute("alt", "initial logo");
+	initialLink.setAttribute("aria-label", "initial logo and link");
+	//add the initial logo image to the initial link
+	initialLink.append(initial_logo);
+
 	//add the LinkedIn logo image to the LinkedIn link
 	linkedin_link.append(linkedin_logo);
 
 	// add LinkedIn and gitHub logos to the contactLinks div(left side of header btm)
-	contactLinksDiv.append(gitlink, linkedin_link);
+	contactLinksDiv.append(gitlink, linkedin_link, initialLink);
 
 	//create how to play button with classes btn and playbtn
 	const howToPlayBtn = document.createElement("button");
